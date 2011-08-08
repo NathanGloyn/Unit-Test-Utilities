@@ -58,7 +58,8 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="ThoughtWorks.Selenium.Core, Version=0.0.0.0, Culture=neutral">
+    <Reference Include="ThoughtWorks.Selenium.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=1c2bd1631853048f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Selenium\Driver\ThoughtWorks.Selenium.Core.dll</HintPath>
     </Reference>
   </ItemGroup>

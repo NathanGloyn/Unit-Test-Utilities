@@ -46,13 +46,14 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="ThoughtWorks.Selenium.Core, Version=0.0.0.0, Culture=neutral">
+    <Reference Include="ThoughtWorks.Selenium.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=1c2bd1631853048f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Selenium\Driver\ThoughtWorks.Selenium.Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Selenium\SeleniumServer_Tests.cs" />
-    <Compile Include="Selenium\SeleniumSupport_Tests.cs" />
+    <Compile Include="Selenium\When_creating_an_instance_of_SeleniumServer.cs" />
+    <Compile Include="Selenium\When_using_selenium_server.cs" />
     <Compile Include="Database\StubDataReader_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -60,7 +61,9 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Unit Test Utility\Unit Test Utility.csproj">

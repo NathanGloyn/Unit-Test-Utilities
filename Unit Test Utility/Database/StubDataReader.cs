@@ -20,8 +20,6 @@ namespace UnitTest.Database
         private DataTable _table = null;
         private int _currentDataTable = 0;
 
-        #region Constructors
-
         /// <summary>
         /// Initializes a new instance of the <see cref="StubDataReader"/> class. 
         /// Each DataTable is a ResultSet
@@ -58,8 +56,6 @@ namespace UnitTest.Database
         {
             _stubReader = new StubDataReader(stubResultSets);
         }
-
-        #endregion
 
         public override void Close()
         {

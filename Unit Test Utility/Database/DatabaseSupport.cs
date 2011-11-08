@@ -12,15 +12,9 @@ namespace UnitTest.Database
     /// </summary>
     public class DatabaseSupport : IDisposable
     {
-        #region Member variables
-
         private SqlConnection _sqlConnection;
         private Server _targetServer;
         private bool _disposed = false;
-
-        #endregion
-
-        #region Constructor & Destructor
 
         /// <summary>
         /// Default Constructor
@@ -40,10 +34,6 @@ namespace UnitTest.Database
             Dispose(false);
         }
 
-        #endregion
-
-        #region IDisposable Members
-
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting resources.
         /// </summary>
@@ -52,10 +42,6 @@ namespace UnitTest.Database
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-
-        #endregion
-
-        #region Public methods
 
         /// <summary>
         /// Method creates\recreates db
@@ -146,10 +132,6 @@ namespace UnitTest.Database
             return results;
         }
 
-        #endregion
-
-        #region Protected methods
-
         /// <summary>
         /// Method to dispose of objects used 
         /// </summary>
@@ -167,10 +149,6 @@ namespace UnitTest.Database
 
             }
         }
-
-        #endregion
-
-        #region Private methods
 
         /// <summary>
         /// Recreates the db with base data
@@ -293,9 +271,6 @@ namespace UnitTest.Database
 
             return script;
         }
-
-        #endregion
-
     }
 
 }

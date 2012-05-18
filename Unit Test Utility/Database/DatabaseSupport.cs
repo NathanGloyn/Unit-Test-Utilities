@@ -44,6 +44,36 @@ namespace UnitTest.Database
         }
 
         /// <summary>
+        /// Creates a new empty database on the server if one of that name doesn't already exist
+        /// </summary>
+        /// <param name="name">Name of the database to create</param>
+        public void CreateDB(string name)
+        {
+            if (!_targetServer.Databases.Contains(name))
+            {
+                var toCreate = new Microsoft.SqlServer.Management.Smo.Database(_targetServer, name);
+                toCreate.Create();
+            }
+        }
+
+        /// <summary>
+        /// Drops a database on the server
+        /// </summary>
+        /// <param name="name">name of the database to drop</param>
+        public void DropDB(string name)
+        {
+            if (_targetServer.Databases.Contains(name))
+            {
+                _targetServer.KillAllProcesses(_sqlConnection.Database);
+                _targetServer.KillDatabase(name);
+            }
+            else
+            {
+                throw new InvalidOperationException("Unable to drop the dabase as unable to find a database called " + name);
+            }
+        }
+
+        /// <summary>
         /// Method creates\recreates db
         /// </summary>
         /// <param name="createScriptPath">Path to the <b>directory</b> that contains the script(s) for creating database</param>
